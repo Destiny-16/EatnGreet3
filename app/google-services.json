@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "45248261281",
+    "firebase_url": "https://eatngreet-12de7.firebaseio.com",
+    "project_id": "eatngreet-12de7",
+    "storage_bucket": "eatngreet-12de7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:45248261281:android:44c8163f9fa8fd1b4994e0",
+        "android_client_info": {
+          "package_name": "com.example.eatngreet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "45248261281-12g05tu0j5cb6db5v6ms3no8hnt7ne3v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.eatngreet",
+            "certificate_hash": "c24b4481c01c96a8b20b7ae9a4ad1e55e4bece89"
+          }
+        },
+        {
+          "client_id": "45248261281-1hc7h96o6j0mp2imb6qhlumcnld5oc6b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwZdIa-KF-AarBQvClZ9ep99pmvemKsCo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "45248261281-1hc7h96o6j0mp2imb6qhlumcnld5oc6b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.eatngreet">
+
+    <uses-feature android:name="android.hardware.camera"
+        android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".Registration1"></activity>
+        <activity android:name=".RegistrationPic" />
+        <activity android:name=".UploadPicture" />
+        <activity android:name=".PictureUpload" />
+        <activity android:name=".Registration" />
+        <activity android:name=".ReportActivity" />
+        <activity android:name=".ChatActivity" />
+        <activity android:name=".UserProfile" />
+        <activity android:name=".Profile" />
+        <activity android:name=".MealDetails" />
+        <activity android:name=".MainMenuuu" />
+        <activity android:name=".Matches" />
+        <activity android:name=".FindPartner5" />
+        <activity android:name=".FindPartner4" />
+        <activity android:name=".findPartner3" />
+        <activity android:name=".FindPartner2" />
+        <activity android:name=".FindPartner1" />
+        <activity android:name=".EditProfile" />
+        <activity android:name=".MainMenu" />
+        <activity android:name=".UpcomingMeals" />
+        <activity android:name=".SearchActivity" />
+        <activity android:name=".MessagesActivity" />
+        <activity android:name=".EditProfilePic" />
+        <activity android:name=".RateActivity" />
+        <activity android:name=".ContactUs" />
+        <activity android:name=".ui.login.LoginActivity" />
+        <activity android:name=".SplashScreenActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

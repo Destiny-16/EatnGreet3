@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">EatnGreet</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="rateYourLastPartner">Rate Your Last Partner</string>
+    <string name="like">LIKE</string>
+    <string name="dislike">DISLIKE</string>
+
+    <string name="registration">Registration</string>
+    <string name="nameCOLON">Name:</string>
+    <string name="passwordCOLON">Password:</string>
+    <string name="emailAddressCOLON">Email Address:</string>
+    <string name="confirmPasswordCOLON">Confirm Password:</string>
+    <string name="submitCAPS">SUBMIT</string>
+    <string name="profilePictureCOLON">Profile Picture:</string>
+    <string name="upload">Upload</string>
+
+    <string name="report">Report</string>
+    <string name="whatHappened">What happened?</string>
+
+    <string name="upcomingMeals">Upcoming Meals</string>
+    <string name="details">Details</string>
+    <string name="maryJane">Mary Jane</string>
+    <string name="march42020">March 4, 2020</string>
+    <string name="time800pm">8:00 PM</string>
+
+    <string name="mealDetails">Meal Details</string>
+    <string name="partnerCOLON">Partner:</string>
+    <string name="locationCOLON">Location:</string>
+    <string name="dateCOLON">Date:</string>
+    <string name="timeCOLON">Time:</string>
+    <string name="oliveGarden">Olive Garden</string>
+    <string name="googleMapWithARestaurant">Google Map With A Restaurant</string>
+
+    <string name="messages">Messages</string>
+    <string name="message1">What about 8pm?</string>
+    <string name="message2">Hey</string>
+    <string name="message3">How is it going?</string>
+    <string name="jamieSmith">Jamie Smith</string>
+    <string name="marianRogers">Marian Rogers</string>
+
+    <string name="tempName">Taliyah Hamilton</string>
+</resources>
+

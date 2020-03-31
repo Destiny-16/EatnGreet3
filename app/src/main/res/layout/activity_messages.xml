@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:orientation="vertical"
+    tools:context=".PictureUpload">
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_purple"
+        android:singleLine="true"
+        android:text="@string/messages"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="34sp"></TextView>
+
+
+    <ScrollView
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text1"
+        android:background="@color/white"
+        android:layout_marginTop="30dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/image1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/profilepic">
+            </ImageView>
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="@string/maryJane"
+                android:textSize="25sp"
+                android:singleLine="true"
+                android:textAlignment="center">
+            </TextView>
+
+            <TextView
+                android:id="@+id/text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="@string/message1"
+                android:textSize="25sp"
+                android:singleLine="true"
+                android:textAlignment="center">
+            </TextView>
+
+            <Button
+                android:id="@+id/button19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:singleLine="true"
+                android:text="@string/details"
+                android:textAlignment="center"
+                android:textSize="20sp"></Button>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/layout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout1"
+        android:background="@color/white"
+        android:layout_marginTop="30dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/image2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/profilepic">
+            </ImageView>
+
+            <TextView
+                android:id="@+id/text4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="@string/jamieSmith"
+                android:textSize="25sp"
+                android:singleLine="true"
+                android:textAlignment="center">
+            </TextView>
+
+            <TextView
+                android:id="@+id/text5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="@string/message2"
+                android:textSize="25sp"
+                android:singleLine="true"
+                android:textAlignment="center">
+            </TextView>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <ScrollView
+        android:id="@+id/layout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout2"
+        android:background="@color/white"
+        android:layout_marginTop="30dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/image3"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/profilepic">
+            </ImageView>
+
+            <TextView
+                android:id="@+id/text6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="@string/marianRogers"
+                android:textSize="25sp"
+                android:singleLine="true"
+                android:textAlignment="center">
+            </TextView>
+
+            <TextView
+                android:id="@+id/text7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="@string/message3"
+                android:textSize="25sp"
+                android:singleLine="true"
+                android:textAlignment="center">
+            </TextView>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/button18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_purple"
+        android:text="back" />
+
+</RelativeLayout>
