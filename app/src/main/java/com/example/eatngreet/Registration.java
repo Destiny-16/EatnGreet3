@@ -32,6 +32,8 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
     Button button24;
     Button button23;
     EditText name, email, password2, cPassword, food2, restaurant, fact;
+    Button button;
+    Button button2;
     //FirebaseAuth fAuth;
     private static final String TAG = Registration.class.getSimpleName();
     private DatabaseReference mFirebaseDatabase;

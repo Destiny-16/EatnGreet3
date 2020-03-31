@@ -15,6 +15,7 @@ public class UploadPicture extends AppCompatActivity implements View.OnClickList
     Button backButton11;
     Button upload;
     Button capture;
+    Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +26,7 @@ public class UploadPicture extends AppCompatActivity implements View.OnClickList
         capture = findViewById(R.id.capture);
         upload = findViewById(R.id.upload);
 
-
+//comment mfkmff
         backButton11.setOnClickListener(this);
         capture.setOnClickListener(this);
         upload.setOnClickListener(this);
