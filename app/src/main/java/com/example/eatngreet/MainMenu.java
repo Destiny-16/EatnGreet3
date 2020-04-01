@@ -58,7 +58,7 @@ public class MainMenu extends AppCompatActivity implements View.OnClickListener{
                 break;
 
             case R.id.profileButton:
-                Intent intent = new Intent(getApplicationContext(), EditProfile.class);
+                Intent intent = new Intent(getApplicationContext(), UserProfile.class);
                 startActivity(intent);
                 break;
 
