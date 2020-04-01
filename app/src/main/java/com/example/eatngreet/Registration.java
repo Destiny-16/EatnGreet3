@@ -81,10 +81,7 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.button23:
-                //String sEmail = email.getText().toString().trim();
                 String sName = name.getText().toString().trim();
-                //String sPassword = password2.getText().toString().trim();
-                //String sCPassword = cPassword.getText().toString().trim();
                 String sFood = food2.getText().toString().trim();
                 String sRestaurant = restaurant.getText().toString().trim();
                 String sFact = fact.getText().toString().trim();
@@ -94,14 +91,7 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
                     name.setError("This field is required.");
                     return;
                 }
-//                if(TextUtils.isEmpty(sEmail)) {
-//                    email.setError("This field is required.");
-//                    return;
-//                }
-//                if(TextUtils.isEmpty(sPassword)){
-//                    password2.setError("This field is required.");
-//                    return;
-//                }
+
                 if(TextUtils.isEmpty(sFood)){
                     food2.setError("This field is required.");
                     return;
@@ -125,7 +115,6 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
 
                 mFirebaseInstance = FirebaseDatabase.getInstance();
                 mFirebaseDatabase = mFirebaseInstance.getReference("users");
-                //mFirebaseInstance.getReference(userId).setValue(sName);
 
 
                 User user = new User(sFact, sFood, sName, sRestaurant);
@@ -145,31 +134,7 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
                     }
                 });
 
-
-
                 startActivity(new Intent(getApplicationContext(), UploadPicture.class));
-//
-
-
-                //progressBar2.setVisibility(View.VISIBLE);
-
-                //user registration
-//                fAuth.createUserWithEmailAndPassword(sEmail, sPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<AuthResult> task) {
-//                        if(task.isSuccessful() ){
-//                            Toast.makeText(getApplicationContext(), "User Created.", Toast.LENGTH_SHORT).show();
-//                            startActivity(new Intent(getApplicationContext(), UploadPicture.class));
-//                        }
-//                        else{
-//                            Toast.makeText(getApplicationContext(), "Error!" + task.getException().getMessage() , Toast.LENGTH_SHORT).show();
-//
-//                        }
-//                    }
-//                });
-
-
-
 
                 break;
         }
