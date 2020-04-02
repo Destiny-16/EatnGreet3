@@ -15,7 +15,6 @@
         <activity android:name=".Registration1"></activity>
         <activity android:name=".RegistrationPic" />
         <activity android:name=".UploadPicture" />
-        <activity android:name=".PictureUpload" />
         <activity android:name=".Registration" />
         <activity android:name=".ReportActivity" />
         <activity android:name=".ChatActivity" />
@@ -36,7 +35,13 @@
         <activity android:name=".MessagesActivity" />
         <activity android:name=".EditProfilePic" />
         <activity android:name=".RateActivity" />
-        <activity android:name=".ContactUs" />
+        <activity android:name=".ContactUs" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="message/rfc822"/>
+            </intent-filter>
+        </activity>
         <activity android:name=".ui.login.LoginActivity" />
         <activity android:name=".SplashScreenActivity">
             <intent-filter>

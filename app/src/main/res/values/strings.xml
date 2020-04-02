@@ -46,6 +46,13 @@
     <string name="jamieSmith">Jamie Smith</string>
     <string name="marianRogers">Marian Rogers</string>
 
+    <string name="contactUs">Contact Us</string>
+    <string name="name">Name</string>
+    <string name="subject">Subject</string>
+    <string name="body">Body</string>
+    <string name="send">Send</string>
+    <string name="back">Back</string>
+
     <string name="tempName">Taliyah Hamilton</string>
 </resources>
 
