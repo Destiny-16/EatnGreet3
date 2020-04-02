@@ -44,6 +44,7 @@ public class RateActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
 
+        /*
         // DO NOT CHANGE / CREATES DATABASE CONNECTION***********************************************************
         FirebaseUser user2 = FirebaseAuth.getInstance().getCurrentUser();
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference(USER_SERVICE).child(user2.getUid());
@@ -83,19 +84,20 @@ public class RateActivity extends AppCompatActivity implements View.OnClickListe
             setLikes(0);
             setDislikes(0);
         }
+        */
 
         // Increment and apply new like or dislike
         switch(view.getId()) {
 
             case R.id.button1:
-                double likes = getLikes() + 1;
-                mFirebaseDatabase.child(userId).child("likes").setValue(likes);
+                //double likes = getLikes() + 1;
+                //mFirebaseDatabase.child(userId).child("likes").setValue(likes);
                 startActivity(new Intent(getApplicationContext(), MainMenu.class));
                 break;
 
             case R.id.button2:
-                double dislikes = getDislikes() + 1;
-                mFirebaseDatabase.child(userId).child("dislikes").setValue(dislikes);
+                //double dislikes = getDislikes() + 1;
+                //mFirebaseDatabase.child(userId).child("dislikes").setValue(dislikes);
                 Intent intent = new Intent(getApplicationContext(), MainMenu.class);
                 startActivity(intent);
                 break;
