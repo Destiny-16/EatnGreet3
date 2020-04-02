@@ -22,55 +22,44 @@
         android:id="@+id/textView46"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginEnd="39dp"
-        android:layout_marginRight="39dp"
         android:text="Restaurant:"
         android:textColor="#0C0C0C"
         android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/changeRestaurant"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView45"
         app:layout_constraintTop_toBottomOf="@+id/textView45" />
 
     <Button
         android:id="@+id/submitButton2"
         android:layout_width="0dp"
         android:layout_height="53dp"
-        android:layout_marginTop="67dp"
         android:layout_marginEnd="6dp"
         android:layout_marginRight="6dp"
-        android:layout_marginBottom="71dp"
         android:background="#030303"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/changeFact"
+        app:layout_constraintBaseline_toBaselineOf="@+id/changeEmail"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/changeEmail"
-        app:layout_constraintTop_toTopOf="@+id/submitButton" />
+        app:layout_constraintStart_toEndOf="@+id/changeEmail" />
 
     <Button
         android:id="@+id/submitButton3"
         android:layout_width="0dp"
         android:layout_height="53dp"
-        android:layout_marginTop="122dp"
-        android:layout_marginEnd="6dp"
-        android:layout_marginRight="6dp"
-        android:layout_marginBottom="123dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
         android:background="#030303"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/changeRestaurant"
+        app:layout_constraintBaseline_toBaselineOf="@+id/changeFact"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/changeFact"
-        app:layout_constraintTop_toBottomOf="@+id/textView41" />
+        app:layout_constraintStart_toEndOf="@+id/changeFact" />
 
     <Button
         android:id="@+id/submitButton4"
         android:layout_width="0dp"
         android:layout_height="53dp"
-        android:layout_marginTop="86dp"
-        android:layout_marginEnd="6dp"
-        android:layout_marginRight="6dp"
-        android:layout_marginBottom="85dp"
+        android:layout_marginTop="87dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="87dp"
         android:background="#030303"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/submitButton5"
@@ -82,12 +71,17 @@
         android:id="@+id/textView45"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="47dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="66dp"
+        android:layout_marginRight="66dp"
+        android:layout_marginBottom="246dp"
         android:text="Favorite"
         android:textColor="#0C0C0C"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/textView46"
-        app:layout_constraintTop_toBottomOf="@+id/textView44" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/changeRestaurant"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView44"
@@ -97,11 +91,10 @@
         android:layout_marginLeft="16dp"
         android:layout_marginEnd="18dp"
         android:layout_marginRight="18dp"
-        android:layout_marginBottom="317dp"
         android:text="Favorite Food:"
         android:textColor="#0C0C0C"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBaseline_toBaselineOf="@+id/changeFood"
         app:layout_constraintEnd_toStartOf="@+id/changeFood"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -140,11 +133,11 @@
         android:id="@+id/changeFood"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="19dp"
-        android:layout_marginRight="19dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView44"
+        app:layout_constraintBottom_toBottomOf="@+id/submitButton4"
         app:layout_constraintEnd_toStartOf="@+id/submitButton4"
         app:layout_constraintStart_toEndOf="@+id/textView44" />
 
@@ -171,32 +164,34 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/textView46"
         app:layout_constraintEnd_toStartOf="@+id/submitButton5"
-        app:layout_constraintStart_toEndOf="@+id/textView46"
+        app:layout_constraintStart_toEndOf="@+id/textView45"
         app:layout_constraintTop_toTopOf="@+id/textView46" />
 
     <EditText
         android:id="@+id/changeFact"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="19dp"
-        android:layout_marginRight="19dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintBaseline_toBaselineOf="@+id/submitButton3"
         app:layout_constraintEnd_toStartOf="@+id/submitButton3"
-        app:layout_constraintStart_toEndOf="@+id/textView43" />
+        app:layout_constraintStart_toEndOf="@+id/textView43"
+        app:layout_constraintTop_toBottomOf="@+id/submitButton2" />
 
     <EditText
         android:id="@+id/changeEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="19dp"
         android:layout_marginRight="19dp"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintBaseline_toBaselineOf="@+id/submitButton2"
         app:layout_constraintEnd_toStartOf="@+id/submitButton2"
-        app:layout_constraintStart_toEndOf="@+id/textView42" />
+        app:layout_constraintStart_toEndOf="@+id/textView42"
+        app:layout_constraintTop_toBottomOf="@+id/changeName" />
 
     <include
         android:id="@+id/include"
@@ -231,28 +226,26 @@
         android:id="@+id/changeName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="19dp"
-        android:layout_marginRight="19dp"
+        android:layout_marginTop="142dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintBaseline_toBaselineOf="@+id/submitButton"
         app:layout_constraintEnd_toStartOf="@+id/submitButton"
-        app:layout_constraintStart_toEndOf="@+id/textView41" />
+        app:layout_constraintStart_toEndOf="@+id/textView41"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/submitButton"
         android:layout_width="0dp"
         android:layout_height="53dp"
-        android:layout_marginTop="93dp"
-        android:layout_marginEnd="6dp"
-        android:layout_marginRight="6dp"
-        android:layout_marginBottom="93dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
         android:background="#030303"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/submitButton3"
+        app:layout_constraintBaseline_toBaselineOf="@+id/changeName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/changeName"
-        app:layout_constraintTop_toTopOf="@+id/textView4" />
+        app:layout_constraintStart_toEndOf="@+id/changeName" />
 
     <Button
         android:id="@+id/backButton"
@@ -270,14 +263,30 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="139dp"
+        android:layout_marginTop="93dp"
         android:layout_marginEnd="71dp"
         android:layout_marginRight="71dp"
+        android:layout_marginBottom="93dp"
         android:text="Name:"
         android:textColor="#0C0C0C"
         android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/changeEmail"
         app:layout_constraintEnd_toStartOf="@+id/changeName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/textView4" />
+
+    <Button
+        android:id="@+id/profilePic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#050505"
+        android:text="@string/profilePictureCOLON"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.868" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

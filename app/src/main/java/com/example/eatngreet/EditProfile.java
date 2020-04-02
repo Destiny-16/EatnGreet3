@@ -24,7 +24,7 @@ public class EditProfile extends AppCompatActivity implements View.OnClickListen
     Button submitButton2;
     Button submitButton3;
     Button submitButton4;
-    Button submitButton5;
+    Button submitButton5, profiilePic;
     EditText changeName, changeEmail, changeFact, changeFood, changeRestaurant;
     FirebaseAuth fAuth;
     private static final String TAG = Registration.class.getSimpleName();
@@ -48,6 +48,7 @@ public class EditProfile extends AppCompatActivity implements View.OnClickListen
         changeRestaurant = findViewById(R.id.changeRestaurant);
         changeFact = findViewById(R.id.changeFact);
         changeFood = findViewById(R.id.changeFood);
+        profiilePic = findViewById(R.id.profilePic);
 
         backButton.setOnClickListener(this);
         submitButton.setOnClickListener(this);
@@ -55,6 +56,7 @@ public class EditProfile extends AppCompatActivity implements View.OnClickListen
         submitButton3.setOnClickListener(this);
         submitButton4.setOnClickListener(this);
         submitButton5.setOnClickListener(this);
+        profiilePic.setOnClickListener(this);
     }
 
     @Override
@@ -74,6 +76,10 @@ public class EditProfile extends AppCompatActivity implements View.OnClickListen
 
             case R.id.backButton:
                 startActivity(new Intent(getApplicationContext(), MainMenu.class));
+                break;
+
+            case R.id.profilePic:
+                startActivity(new Intent(getApplicationContext(), EditProfilePic.class));
                 break;
 
             case R.id.submitButton:

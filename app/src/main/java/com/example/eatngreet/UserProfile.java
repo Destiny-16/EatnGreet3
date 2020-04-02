@@ -20,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 public class UserProfile extends AppCompatActivity implements View.OnClickListener {
 
     Button button7, editButton;
-    TextView favFood2, favRestaurant2, funFact2, userName3;
+    TextView favFood2, favRestaurant2, funFact2, userName3, age, gender;
     private static final String TAG = Registration.class.getSimpleName();
     private DatabaseReference mFirebaseDatabase;
     private FirebaseDatabase mFirebaseInstance;
@@ -36,6 +36,8 @@ public class UserProfile extends AppCompatActivity implements View.OnClickListen
         favRestaurant2 = findViewById(R.id.favRestaurant2);
         funFact2 = findViewById(R.id.funFact2);
         userName3 = findViewById(R.id.userName3);
+        age = findViewById(R.id.age);
+        gender = findViewById(R.id.gender);
 
         button7.setOnClickListener(this);
         editButton.setOnClickListener(this);
@@ -57,11 +59,16 @@ public class UserProfile extends AppCompatActivity implements View.OnClickListen
                 String food = dataSnapshot.child("food").getValue().toString();
                 String fact = dataSnapshot.child("fact").getValue().toString();
                 String restaurant = dataSnapshot.child("restaurant").getValue().toString();
+                String gender2 = dataSnapshot.child("gender").getValue().toString();
+                String age2 = dataSnapshot.child("age").getValue().toString();
 
                 userName3.setText(name);
                 favFood2.setText(food);
                 favRestaurant2.setText(restaurant);
                 funFact2.setText(fact);
+                gender.setText(gender2);
+                age.setText(age2);
+
             }
 
             @Override

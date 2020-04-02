@@ -7,6 +7,18 @@
     tools:context=".UserProfile">
 
     <TextView
+        android:id="@+id/age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="22dp"
+        android:layout_marginRight="22dp"
+        android:layout_marginBottom="11dp"
+        android:text="28"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView4"
+        app:layout_constraintEnd_toEndOf="@+id/imageView4" />
+
+    <TextView
         android:id="@+id/dislikes3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -30,39 +42,41 @@
 
     <TextView
         android:id="@+id/userName3"
-        android:layout_width="144dp"
+        android:layout_width="110dp"
         android:layout_height="34dp"
-        android:layout_marginTop="22dp"
-        android:text="Jamie Smith"
+        android:layout_marginTop="60dp"
+        android:text="Jamie"
         android:textColor="@android:color/holo_purple"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.531"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button7" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <include
         android:id="@+id/include"
         layout="@layout/actionbar"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="406dp"
+        android:layout_height="54dp"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="14dp"
+        android:layout_marginBottom="17dp"
         android:background="@android:color/holo_purple"
         app:layout_constraintBottom_toTopOf="@+id/userName3"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="6dp"
-        android:layout_marginLeft="6dp"
-        android:layout_marginTop="51dp"
+        android:layout_marginTop="50dp"
         android:contentDescription="profilePicture"
-        app:layout_constraintStart_toStartOf="@+id/userName3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/userName3"
         tools:srcCompat="@tools:sample/avatars" />
 
@@ -107,8 +121,8 @@
         android:id="@+id/favRestaurant2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginLeft="14dp"
         android:layout_marginTop="34dp"
         android:text="Five Guys"
         app:layout_constraintStart_toEndOf="@+id/favRestaurantLabel2"
@@ -157,9 +171,18 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="5dp"
         android:background="@android:color/holo_purple"
         android:text="back"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/include" />
+
+    <TextView
+        android:id="@+id/gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="11dp"
+        android:text="Male"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView4"
+        app:layout_constraintStart_toStartOf="@+id/imageView4" />
 </androidx.constraintlayout.widget.ConstraintLayout>
