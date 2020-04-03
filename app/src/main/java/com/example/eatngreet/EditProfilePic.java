@@ -1,16 +1,25 @@
 package com.example.eatngreet;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class EditProfilePic extends AppCompatActivity {
 
     Button backButton8;
-    Button submit;
+    Button button4;
+    ImageView imageView7;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,29 +27,33 @@ public class EditProfilePic extends AppCompatActivity {
         setContentView(R.layout.activity_edit_profile_pic);
 
         backButton8 = findViewById(R.id.backButton8);
+        imageView7 = findViewById(R.id.imageView7);
+        button4 = findViewById(R.id.button4);
 
-        backButton8.setOnClickListener(new View.OnClickListener() {
+        if(ContextCompat.checkSelfPermission(EditProfilePic.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(EditProfilePic.this,
+                    new String[]{
+                            Manifest.permission.CAMERA
+                    }, 100);
+        }
 
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), EditProfile.class);
-                startActivity(intent);
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(intent, 100);
+
             }
 
         });
 
+        }
 
-        submit = findViewById(R.id.button4);
-
-        submit.setOnClickListener(new View.OnClickListener() {
-
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MainMenu.class);
-                startActivity(intent);
-            }
-
-        });
-
-
-
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if(requestCode == 100){
+            Bitmap captureImage = (Bitmap) data.getExtras().get("data");
+            imageView7.setImageBitmap(captureImage);
     }
+}
 }

@@ -5,33 +5,26 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.nfc.Tag;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
-import android.widget.Toast;
 
 import com.example.eatngreet.ui.login.LoginActivity;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.IgnoreExtraProperties;
 import com.google.firebase.database.ValueEventListener;
 
 public class Registration extends AppCompatActivity implements View.OnClickListener{
     Button button24;
     Button button23;
-    EditText name, email, password2, cPassword, food2, restaurant, fact;
+    EditText name, email, password2, cPassword, food2, restaurant, fact, gender, age;
     Button button;
     Button button2;
     //FirebaseAuth fAuth;
@@ -55,6 +48,9 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
         food2 = findViewById(R.id.food2);
         restaurant = findViewById(R.id.restaurant);
         fact = findViewById(R.id.fact);
+        gender = findViewById(R.id.gender);
+        age = findViewById(R.id.age);
+
 
         button24.setOnClickListener(this);
         button23.setOnClickListener(this);
@@ -81,27 +77,19 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.button23:
-                //String sEmail = email.getText().toString().trim();
                 String sName = name.getText().toString().trim();
-                //String sPassword = password2.getText().toString().trim();
-                //String sCPassword = cPassword.getText().toString().trim();
                 String sFood = food2.getText().toString().trim();
                 String sRestaurant = restaurant.getText().toString().trim();
                 String sFact = fact.getText().toString().trim();
+                String sGender = gender.getText().toString().trim();
+                String sAge = age.getText().toString().trim();
 
 
                 if(TextUtils.isEmpty(sName)){
                     name.setError("This field is required.");
                     return;
                 }
-//                if(TextUtils.isEmpty(sEmail)) {
-//                    email.setError("This field is required.");
-//                    return;
-//                }
-//                if(TextUtils.isEmpty(sPassword)){
-//                    password2.setError("This field is required.");
-//                    return;
-//                }
+
                 if(TextUtils.isEmpty(sFood)){
                     food2.setError("This field is required.");
                     return;
@@ -112,6 +100,14 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
                 }
                 if(TextUtils.isEmpty(sFact)){
                     fact.setError("This field is required.");
+                    return;
+                }
+                if(TextUtils.isEmpty(sGender)){
+                    gender.setError("This field is required.");
+                    return;
+                }
+                if(TextUtils.isEmpty(sAge)){
+                    age.setError("This field is required.");
                     return;
                 }
 
@@ -125,10 +121,9 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
 
                 mFirebaseInstance = FirebaseDatabase.getInstance();
                 mFirebaseDatabase = mFirebaseInstance.getReference("users");
-                //mFirebaseInstance.getReference(userId).setValue(sName);
 
 
-                User user = new User(sFact, sFood, sName, sRestaurant);
+                User user = new User(sFact, sFood, sName, sRestaurant, sGender, sAge);
                 mFirebaseDatabase.child(userId).setValue(user);
 
                 mFirebaseInstance.getReference("name").addValueEventListener(new ValueEventListener() {
@@ -145,31 +140,7 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
                     }
                 });
 
-
-
                 startActivity(new Intent(getApplicationContext(), UploadPicture.class));
-//
-
-
-                //progressBar2.setVisibility(View.VISIBLE);
-
-                //user registration
-//                fAuth.createUserWithEmailAndPassword(sEmail, sPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<AuthResult> task) {
-//                        if(task.isSuccessful() ){
-//                            Toast.makeText(getApplicationContext(), "User Created.", Toast.LENGTH_SHORT).show();
-//                            startActivity(new Intent(getApplicationContext(), UploadPicture.class));
-//                        }
-//                        else{
-//                            Toast.makeText(getApplicationContext(), "Error!" + task.getException().getMessage() , Toast.LENGTH_SHORT).show();
-//
-//                        }
-//                    }
-//                });
-
-
-
 
                 break;
         }
