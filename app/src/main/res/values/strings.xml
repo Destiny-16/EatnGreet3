@@ -53,6 +53,11 @@
     <string name="send">Send</string>
     <string name="back">Back</string>
 
+    <string name="matches">Matches</string>
+    <string name="view">View</string>
+    <string name="chat">Chat</string>
+    <string name="greet">Greet</string>
+
     <string name="tempName">Taliyah Hamilton</string>
 </resources>
 
