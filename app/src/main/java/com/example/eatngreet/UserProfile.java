@@ -4,9 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -17,10 +21,13 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.IOException;
+
 public class UserProfile extends AppCompatActivity implements View.OnClickListener {
 
     Button button7, editButton;
-    TextView favFood2, favRestaurant2, funFact2, userName3, age, gender;
+    TextView favFood2, favRestaurant2, funFact2, userName3, age, gender, likes, dislikes;
+    ImageView imageView;
     private static final String TAG = Registration.class.getSimpleName();
     private DatabaseReference mFirebaseDatabase;
     private FirebaseDatabase mFirebaseInstance;
@@ -38,6 +45,9 @@ public class UserProfile extends AppCompatActivity implements View.OnClickListen
         userName3 = findViewById(R.id.userName3);
         age = findViewById(R.id.age);
         gender = findViewById(R.id.gender);
+        imageView = findViewById(R.id.imageView4);
+        likes = findViewById(R.id.likes3);
+        dislikes = findViewById(R.id.dislikes3);
 
         button7.setOnClickListener(this);
         editButton.setOnClickListener(this);
@@ -52,7 +62,7 @@ public class UserProfile extends AppCompatActivity implements View.OnClickListen
         mFirebaseInstance = FirebaseDatabase.getInstance();
         mFirebaseDatabase = mFirebaseInstance.getReference("users").child(userId);
 
-        mFirebaseDatabase.addValueEventListener(new ValueEventListener() {
+        mFirebaseDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String name = dataSnapshot.child("name").getValue().toString();
@@ -61,6 +71,18 @@ public class UserProfile extends AppCompatActivity implements View.OnClickListen
                 String restaurant = dataSnapshot.child("restaurant").getValue().toString();
                 String gender2 = dataSnapshot.child("gender").getValue().toString();
                 String age2 = dataSnapshot.child("age").getValue().toString();
+                if(dataSnapshot.hasChild("likes")) { likes.setText("likes: " + dataSnapshot.child("likes").getValue().toString()); }
+                if(dataSnapshot.hasChild("dislikes")) { dislikes.setText("dislikes: " + dataSnapshot.child("dislikes").getValue().toString()); }
+                String image;
+                if(dataSnapshot.hasChild("profileImage")){
+                    image = dataSnapshot.child("profileImage").getValue().toString();
+                    try{
+                        Bitmap imageBitmap = decodeFromFirebase64(image);
+                        imageView.setImageBitmap(imageBitmap);}
+                    catch (IOException e){
+                        e.printStackTrace();
+                    }
+                }
 
                 userName3.setText(name);
                 favFood2.setText(food);
@@ -77,9 +99,11 @@ public class UserProfile extends AppCompatActivity implements View.OnClickListen
             }
         });
 
+    }
 
-
-
+    public static Bitmap decodeFromFirebase64(String image) throws IOException{
+        byte[] decodedByteArray = android.util.Base64.decode(image, Base64.DEFAULT);
+        return BitmapFactory.decodeByteArray(decodedByteArray, 0, decodedByteArray.length);
     }
 
     @Override
