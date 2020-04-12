@@ -58,6 +58,8 @@
     <string name="chat">Chat</string>
     <string name="greet">Greet</string>
 
+    <string name="done">Done</string>
+
     <string name="tempName">Taliyah Hamilton</string>
 </resources>
 

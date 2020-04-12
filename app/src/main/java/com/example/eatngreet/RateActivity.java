@@ -18,6 +18,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.HashMap;
+
 public class RateActivity extends AppCompatActivity implements View.OnClickListener{
 
     Button button1;
@@ -39,12 +41,6 @@ public class RateActivity extends AppCompatActivity implements View.OnClickListe
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
 
-    }
-
-    @Override
-    public void onClick(View view) {
-
-        /*
         // DO NOT CHANGE / CREATES DATABASE CONNECTION***********************************************************
         FirebaseUser user2 = FirebaseAuth.getInstance().getCurrentUser();
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference(USER_SERVICE).child(user2.getUid());
@@ -58,15 +54,18 @@ public class RateActivity extends AppCompatActivity implements View.OnClickListe
         // *******************************************************************************************************
 
         // Check if the field exists, if it does then get likes and dislikes
-        mFirebaseDatabase.addValueEventListener(new ValueEventListener() {
+       mFirebaseDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.hasChild("likes")){
-                    setExists(true);
-                    setLikes((double)dataSnapshot.child("likes").getValue());
-                    setDislikes((double)dataSnapshot.child("dislikes").getValue());
+                    double likes = dataSnapshot.child("likes").getValue(double.class);
+                    double dislikes = dataSnapshot.child("dislikes").getValue(double.class);
+                    setLikes(likes);
+                    setDislikes(dislikes);
                 }
-                else setExists(false);
+                else{
+                    createNewFields(mFirebaseDatabase);
+                }
             }
 
             @Override
@@ -75,29 +74,43 @@ public class RateActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-        // Create the new field if not exists, set likes and dislikes
-        if(getExists() == false) {
-            mFirebaseDatabase.push().setValue("likes");
-            mFirebaseDatabase.push().setValue("dislikes");
-            mFirebaseDatabase.child("likes").push().setValue(0);
-            mFirebaseDatabase.child("dislikes").push().setValue(0);
-            setLikes(0);
-            setDislikes(0);
-        }
-        */
+    }
+
+    public void createNewFields(DatabaseReference mFirebaseDatabase){
+        double value = 0;
+        HashMap map = new HashMap();
+        map.put("likes", value);
+        map.put("dislikes", value);
+        mFirebaseDatabase.updateChildren(map);
+        setLikes(0);
+        setDislikes(0);
+    }
+
+    @Override
+    public void onClick(View view) {
+
+        FirebaseUser user2 = FirebaseAuth.getInstance().getCurrentUser();
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference(USER_SERVICE).child(user2.getUid());
+        String ref2 = ref.toString().trim();
+
+        FirebaseUser user3 = FirebaseAuth.getInstance().getCurrentUser();
+        final String userId = user3.getUid();
+
+        mFirebaseInstance = FirebaseDatabase.getInstance();
+        mFirebaseDatabase = mFirebaseInstance.getReference("users").child(userId);
 
         // Increment and apply new like or dislike
         switch(view.getId()) {
 
             case R.id.button1:
-                //double likes = getLikes() + 1;
-                //mFirebaseDatabase.child(userId).child("likes").setValue(likes);
+                double likes = getLikes() + 1;
+                mFirebaseDatabase.child("likes").setValue(likes);
                 startActivity(new Intent(getApplicationContext(), MainMenu.class));
                 break;
 
             case R.id.button2:
-                //double dislikes = getDislikes() + 1;
-                //mFirebaseDatabase.child(userId).child("dislikes").setValue(dislikes);
+                double dislikes = getDislikes() + 1;
+                mFirebaseDatabase.child("dislikes").setValue(dislikes);
                 Intent intent = new Intent(getApplicationContext(), MainMenu.class);
                 startActivity(intent);
                 break;
