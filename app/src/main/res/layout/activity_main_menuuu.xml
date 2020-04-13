@@ -11,8 +11,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="324dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
         android:background="#0F0F0F"
         android:text="Find partner"
         android:textColor="#FFFFFF"
@@ -61,39 +61,33 @@
     <include
         android:id="@+id/include"
         layout="@layout/actionbar"
-        android:layout_width="367dp"
+        android:layout_width="match_parent"
         android:layout_height="51dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="24dp"
-        android:background="@android:color/holo_purple"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@android:color/holo_red_dark"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
         android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginBottom="7dp"
         android:text="Welcome        "
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/include"
-        app:layout_constraintStart_toEndOf="@+id/backButtn" />
+        android:gravity="center"
+        android:paddingLeft="150dp"
+        app:layout_constraintLeft_toLeftOf="@+id/backButtn"
+        app:layout_constraintTop_toTopOf="@+id/include"
+        app:layout_constraintBottom_toBottomOf="@+id/include" />
 
     <Button
         android:id="@+id/backButtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@android:color/holo_purple"
-        android:text="Button"
+        android:background="@android:color/holo_red_dark"
+        android:text="@string/back"
         app:layout_constraintStart_toStartOf="@+id/include"
         app:layout_constraintTop_toTopOf="@+id/include" />
 

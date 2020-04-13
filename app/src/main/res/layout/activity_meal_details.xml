@@ -110,11 +110,9 @@
     <include
         android:id="@+id/include"
         layout="@layout/actionbar"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="55dp"
-        android:background="@android:color/holo_purple"
+        android:background="@android:color/holo_red_dark"
         app:layout_constraintBottom_toTopOf="@+id/changeName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.473"
@@ -163,12 +161,9 @@
         android:id="@+id/bttn14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:background="@android:color/holo_purple"
+        android:background="@android:color/holo_red_dark"
         android:text="back"
-        app:layout_constraintEnd_toStartOf="@+id/textView23"
-        app:layout_constraintHorizontal_bias="0.461"
-        app:layout_constraintStart_toStartOf="@+id/include"
+        app:layout_constraintLeft_toLeftOf="@+id/include"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
