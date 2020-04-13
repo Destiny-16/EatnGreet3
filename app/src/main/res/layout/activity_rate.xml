@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
     android:orientation="vertical"
     tools:context=".RateActivity">
 
@@ -12,9 +11,10 @@
         android:id="@+id/text1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/holo_purple"
+        android:background="@android:color/holo_red_dark"
         android:singleLine="true"
         android:text="@string/rateYourLastPartner"
+        android:gravity="center_horizontal"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="34sp">
@@ -28,6 +28,7 @@
         android:layout_below="@+id/text1"
         android:text="@string/tempName"
         android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
         android:textAlignment="center"
         android:textSize="34sp">
     </TextView>
