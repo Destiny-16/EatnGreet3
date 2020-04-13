@@ -14,6 +14,8 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.eatngreet.MainMenu;
+import com.example.eatngreet.MessagesActivity;
 import com.example.eatngreet.R;
 import com.example.eatngreet.RateActivity;
 import com.example.eatngreet.Registration;
@@ -69,7 +71,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(), RateActivity.class));
+                            startActivity(new Intent(getApplicationContext(), MessagesActivity.class));
                         } else {
                             Toast.makeText(LoginActivity.this, "Error. To create account enter email and password and click REGISTER" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }

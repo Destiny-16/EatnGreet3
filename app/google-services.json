@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "45248261281-gc1e5v97ucg7k7l59mdv4bmhka4lp3vq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.eatngreet",
+            "certificate_hash": "a38e60808919ea6559c55c76b223261c3920d423"
+          }
+        },
+        {
           "client_id": "45248261281-12g05tu0j5cb6db5v6ms3no8hnt7ne3v.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

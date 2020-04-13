@@ -11,7 +11,7 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
 
     Button button16;
     Button chatButton;
-    Button reportButton;
+    Button button1;
 
 
     @Override
@@ -21,12 +21,12 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
 
         button16 = findViewById(R.id.button16);
         chatButton = findViewById(R.id.chatButton);
-        reportButton = findViewById(R.id.reportButton);
+        button1 = findViewById(R.id.button1);
 
 
         button16.setOnClickListener(this);
         chatButton.setOnClickListener(this);
-        reportButton.setOnClickListener(this);
+        button1.setOnClickListener(this);
 
 
         }
@@ -45,7 +45,7 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
                 startActivity(intent);
                 break;
 
-            case R.id.reportButton:
+            case R.id.button1:
                 intent = new Intent(getApplicationContext(), ReportActivity.class);
                 startActivity(intent);
                 break;

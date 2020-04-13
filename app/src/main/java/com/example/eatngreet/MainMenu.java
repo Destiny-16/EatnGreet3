@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.eatngreet.ui.login.LoginActivity;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainMenu extends AppCompatActivity implements View.OnClickListener{
 
@@ -21,8 +23,23 @@ public class MainMenu extends AppCompatActivity implements View.OnClickListener{
     Button contactButton;
     Button logoutButton;
 
+    // ---------- MOVE THIS TO LOGIN PAGE!! ----------
+    FirebaseUser firebaseUser;
 
+    @Override
+    protected void onStart() {
+        super.onStart();
 
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+
+        // check is user is null
+        if (firebaseUser != null){
+            Intent intent = new Intent(MainMenu.this, MainMenu.class);
+            startActivity(intent);
+            finish();
+        }
+    }
+    // ------------------------------------------------
 
 
     @Override
@@ -88,9 +105,7 @@ public class MainMenu extends AppCompatActivity implements View.OnClickListener{
                 break;
         }
 
-
-
-        }
+    }
 }
 
 

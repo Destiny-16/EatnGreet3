@@ -25,7 +25,7 @@ public class SplashScreenActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                startActivity(new Intent(getApplicationContext(), MessagesActivity.class));
             }
         });
 
